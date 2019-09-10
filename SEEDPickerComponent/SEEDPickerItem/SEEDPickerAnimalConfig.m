@@ -60,7 +60,7 @@
     if (!_weightArray) {
         _weightArray = [NSMutableArray array];
         for (NSInteger i = 1; i <= 200; i++) {
-            [_weightArray addObject:[NSString stringWithFormat:@"%.2ldKG",(long)i]];
+            [_weightArray addObject:[NSString stringWithFormat:@"%ld Kg",(long)i]];
         }
     }
     return _weightArray;

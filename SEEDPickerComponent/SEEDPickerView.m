@@ -13,14 +13,17 @@
 
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 
-
 @interface SEEDPickerView () <UIPickerViewDataSource,UIPickerViewDelegate,SEEDPickerViewDelegate>
+
 @property (nonatomic, strong) UIPickerView * pickview;
-@property (nonatomic, strong, readwrite) NSDate *currentDate;
+/** 重定向的数据 */
+@property (nonatomic, strong) id redirectTargetData;
+
 @end
 
 @implementation SEEDPickerView
 
+#pragma mark   init
 - (instancetype)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder:aDecoder];
     if (self) {
@@ -38,6 +41,7 @@
     return self;
 }
 
+#pragma mark   setupUI
 - (void)setupUI{
     /** pickerView */
     UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:self.frame];
@@ -53,8 +57,9 @@
     self.pickview.frame = self.bounds;
 }
 
-//跳转到指定的时间
-- (void)jumptoSpecifiedDate:(id)redirectTargetData{
+#pragma mark  跳转到指定的数据
+- (void)jumptoSpecifiedData:(id)redirectTargetData{
+    self.redirectTargetData = redirectTargetData;
     if (self.dataSource && self.dataSource.count > 0) {
         SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:0];
         SEEDPickerDateConfig *itemConfig = (SEEDPickerDateConfig *)item.config;
@@ -64,11 +69,6 @@
         }
         [manager pickerView:self.pickview selectSpecifiedData:redirectTargetData withDataSource:self.dataSource];
     }
-}
-
-- (void)setRedirectTargetData:(id)redirectTargetData{
-    _redirectTargetData = redirectTargetData;
-    [self jumptoSpecifiedDate:redirectTargetData];
 }
 
 - (void)setDataSource:(NSMutableArray *)dataSource{

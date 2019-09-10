@@ -63,13 +63,13 @@ typedef void(^selectBlcok)(id date);
 /** 所有PickerView对应的manager 都需要遵循这个协议 */
 @protocol SEEDPickerManagerBasicDelegate <NSObject>
 
-//操作时间选择器后将结果通知到VC
+//操作选择器后将结果通知到VC （非必须）
 @property (nonatomic, weak  ) id<SEEDPickerViewDelegate> delegate;
 
 @required
 
 /**
- 跳转到指定时间
+ 跳转到指定数据
  
  @param pickerView 选择器本体
  @param data       指定的数据
@@ -79,7 +79,7 @@ typedef void(^selectBlcok)(id date);
     withDataSource:(NSMutableArray<SEEDPickerSectionItem*> *)dateSource;
 
 /**
- 选中具体的时间
+ 选中具体的数据
  
  @param row        具体选中的行
  @param component  选中的列

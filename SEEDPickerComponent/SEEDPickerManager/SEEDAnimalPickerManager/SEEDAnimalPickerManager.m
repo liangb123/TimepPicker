@@ -29,7 +29,7 @@
     
     SEEDPickerSectionItem *weightItem = [SEEDPickerSectionItem new];
     weightItem.config = config;
-    [weightItem.dataArray addObjectsFromArray:config.nameArray];
+    [weightItem.dataArray addObjectsFromArray:config.weightArray];
     [dataSource addObject:weightItem];
     
     return dataSource;
@@ -75,114 +75,28 @@
 /** 选中具体的*/
 - (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
     
-//    if (item) {
-//        SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
-//        switch (component) {
-//                case 0:{
-//                    NSString *year = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.year = year;
-//                    SEEDPickerSectionItem *dayItem = [dateSource objectAtIndex:2];
-//                    [self refreshDayWithItem:item withTargetItem:dayItem];
-//                }
-//                break;
-//                case 1:{
-//                    NSString *month = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.month = month;
-//                    SEEDPickerSectionItem *dayItem = [dateSource objectAtIndex:2];
-//                    [self refreshDayWithItem:item withTargetItem:dayItem];
-//                }
-//                break;
-//                case 2:{
-//                    NSString *day = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.day = day;
-//                }
-//                break;
-//                case 3:{
-//                    NSString *hour = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.hour = hour;
-//                }
-//                break;
-//                case 4:{
-//                    NSString *minute = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.minute = minute;
-//                }
-//                break;
-//                case 5:{
-//                    NSString *second = [item.dataArray objectAtIndex:row];
-//                    sourceConfig.second = second;
-//                }
-//                break;
-//        }
-//
-//        if (sourceConfig.mindate) {
-//            [self compareMindateWithRow:row inComponent:component withItem:item withDataSource:dateSource];
-//        }
-//
-//        SEEDPickeDateModel *model = [SEEDPickeDateModel createModelWithConfig:sourceConfig];
-//        //点击事件
-//        self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
-//    }
-}
-
-//比较两个时间 来决定是否可选
-- (void)compareMindateWithRow:(NSInteger)row inComponent:(NSInteger)component withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
-//    SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
-//    //获取新选择的时间
-//    NSDate *currentSelectDate = [super loadCurrentSelectDateWithItem:item];
-//    NSComparisonResult result = [super compateWithOldDate:sourceConfig.mindate sourceDate:currentSelectDate];
-//    if (result != NSOrderedAscending) {
-//        NSInteger redirectRow = 0;
-//        switch (component) {
-//                case 0:{
-//                    redirectRow = [sourceConfig.yearArray indexOfObject:sourceConfig.minYear];
-//                }
-//                break;
-//                case 1:{
-//                    redirectRow = [sourceConfig.monthArray indexOfObject:sourceConfig.minMonth];
-//                }
-//                break;
-//                case 2:{
-//                    redirectRow = [sourceConfig.dayArray indexOfObject:sourceConfig.minDay];
-//                }
-//                break;
-//                case 3:{
-//                    redirectRow = [sourceConfig.hourArray indexOfObject:sourceConfig.minHour];
-//                }
-//                break;
-//                case 4:{
-//                    redirectRow = [sourceConfig.minuteArray indexOfObject:sourceConfig.minMinute];
-//                }
-//                break;
-//                case 5:{
-//                    redirectRow = [sourceConfig.secondArray indexOfObject:sourceConfig.minSecond];
-//                }
-//                break;
-//        }
-//        //不允许选择
-//        if ([self.delegate respondsToSelector:@selector(redirectSelectWithWithRow:inComponent:)]){
-//            [self.delegate redirectSelectWithWithRow:redirectRow  inComponent:component];
-//        }
-//        //刷新数据 避免错乱
-//        [super refreshStorageDataWithItem:item];
-//    }
-}
-
-
-- (void)refreshDayWithItem:(SEEDPickerSectionItem*)item withTargetItem:(SEEDPickerSectionItem *)targetItem{
+    if (item) {
+        SEEDPickerAnimalConfig *sourceConfig = (SEEDPickerAnimalConfig *)item.config;
+        switch (component) {
+                case 0:
+            {
+                NSString *name = [item.dataArray objectAtIndex:row];
+                sourceConfig.name = name;
+            }
+                break;
+                
+                case 1:
+            {
+                NSString *weight = [item.dataArray objectAtIndex:row];
+                sourceConfig.weight = weight;
+            }
+                break;
+        }
+        //点击事件
+        SEEDPickeAnimalModel *model = [SEEDPickeAnimalModel createModelWithConfig:sourceConfig];
+        self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
+    }
     
-//    NSMutableArray *arr = [NSMutableArray array];
-//    SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
-//    for (int i = 1; i < [self getDayNumber:sourceConfig.year.integerValue month:sourceConfig.month.integerValue].integerValue + 1; i ++) {
-//        sourceConfig.isZh?[arr addObject:[NSString stringWithFormat:@"%.2ld日",(long)i]]:[arr addObject:[NSString stringWithFormat:@"%.2ld",(long)i]];
-//    }
-//    
-//    targetItem.dataArray = arr;
-//    if ([self.delegate respondsToSelector:@selector(reloadDataWithComponent:withItem:)]) {
-//        //这里需要注意一下 这个下标
-//        [self.delegate reloadDataWithComponent:2 withItem:targetItem];
-//    }
-//    //刷新数据
-//    [super afterSeletedRefreshDataWithItem:item targetItem:targetItem];
 }
 
 @end

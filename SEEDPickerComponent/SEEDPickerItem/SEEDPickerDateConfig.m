@@ -78,7 +78,6 @@
         default:
             className = @"SEEDDatePickerBaseManager";
             break;
-            break;
     }
     
     return className;

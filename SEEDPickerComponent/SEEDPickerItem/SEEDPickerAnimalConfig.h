@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SEEDPickerBasicProtocol.h"
-@class SEEDPickeAnimalModel
+@class SEEDPickeAnimalModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
