@@ -198,11 +198,11 @@
 
 /** 生成一个含有默认属性的config */
 + (SEEDPickerDateConfig *)defaultConfig{
-    return  [SEEDPickerDateConfig cteateFonfigWithDate:[NSDate date] withIszh:NO];
+    return  [SEEDPickerDateConfig createConfigWithDate:[NSDate date] withIszh:NO];
 }
 
 /** 生成一个含有时间信息的config */
-+ (SEEDPickerDateConfig *)cteateFonfigWithDate:(NSDate *)date withIszh:(BOOL)isZh{
++ (SEEDPickerDateConfig *)createConfigWithDate:(NSDate *)date withIszh:(BOOL)isZh{
     
     NSDateComponents *startComp = [[[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
     SEEDPickerDateConfig *config = [SEEDPickerDateConfig new];

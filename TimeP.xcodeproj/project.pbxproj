@@ -30,6 +30,9 @@
 		C48B950823274B6400E31C56 /* SEEDPickerDateConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94F423274B6400E31C56 /* SEEDPickerDateConfig.m */; };
 		C48B950923274B6400E31C56 /* SEEDPickerSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94F723274B6400E31C56 /* SEEDPickerSectionItem.m */; };
 		C48B950A23274B6400E31C56 /* SEEDPickerDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94FB23274B6400E31C56 /* SEEDPickerDefines.m */; };
+		C48B950E232770B500E31C56 /* SEEDAnimalPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B950D232770B500E31C56 /* SEEDAnimalPickerManager.m */; };
+		C48B95112327739C00E31C56 /* SEEDPickerAnimalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B95102327739C00E31C56 /* SEEDPickerAnimalConfig.m */; };
+		C48B9518232783F600E31C56 /* SEEDPickeAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B9517232783F600E31C56 /* SEEDPickeAnimalModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,12 @@
 		C48B94F923274B6400E31C56 /* SEEDPickerDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPickerDefines.h; sourceTree = "<group>"; };
 		C48B94FA23274B6400E31C56 /* SEEDPickerBasicProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPickerBasicProtocol.h; sourceTree = "<group>"; };
 		C48B94FB23274B6400E31C56 /* SEEDPickerDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDPickerDefines.m; sourceTree = "<group>"; };
+		C48B950C232770B500E31C56 /* SEEDAnimalPickerManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDAnimalPickerManager.h; sourceTree = "<group>"; };
+		C48B950D232770B500E31C56 /* SEEDAnimalPickerManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDAnimalPickerManager.m; sourceTree = "<group>"; };
+		C48B950F2327739C00E31C56 /* SEEDPickerAnimalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDPickerAnimalConfig.h; sourceTree = "<group>"; };
+		C48B95102327739C00E31C56 /* SEEDPickerAnimalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDPickerAnimalConfig.m; sourceTree = "<group>"; };
+		C48B9516232783F600E31C56 /* SEEDPickeAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDPickeAnimalModel.h; sourceTree = "<group>"; };
+		C48B9517232783F600E31C56 /* SEEDPickeAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDPickeAnimalModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +206,8 @@
 			children = (
 				C48B94D823274B6400E31C56 /* SEEDPickeDateModel.h */,
 				C48B94D923274B6400E31C56 /* SEEDPickeDateModel.m */,
+				C48B9516232783F600E31C56 /* SEEDPickeAnimalModel.h */,
+				C48B9517232783F600E31C56 /* SEEDPickeAnimalModel.m */,
 			);
 			path = SEEDPickerModel;
 			sourceTree = "<group>";
@@ -204,6 +215,7 @@
 		C48B94DC23274B6400E31C56 /* SEEDPickerManager */ = {
 			isa = PBXGroup;
 			children = (
+				C48B950B2327708D00E31C56 /* SEEDAnimalPickerManager */,
 				C48B94DD23274B6400E31C56 /* SEEDDatePickerManager */,
 				C48B94F023274B6400E31C56 /* SEEDOtherPickerManager */,
 			);
@@ -249,6 +261,8 @@
 			children = (
 				C48B94F623274B6400E31C56 /* SEEDPickerDateConfig.h */,
 				C48B94F423274B6400E31C56 /* SEEDPickerDateConfig.m */,
+				C48B950F2327739C00E31C56 /* SEEDPickerAnimalConfig.h */,
+				C48B95102327739C00E31C56 /* SEEDPickerAnimalConfig.m */,
 				C48B94F523274B6400E31C56 /* SEEDPickerSectionItem.h */,
 				C48B94F723274B6400E31C56 /* SEEDPickerSectionItem.m */,
 			);
@@ -263,6 +277,15 @@
 				C48B94FB23274B6400E31C56 /* SEEDPickerDefines.m */,
 			);
 			path = SEEDPickerOther;
+			sourceTree = "<group>";
+		};
+		C48B950B2327708D00E31C56 /* SEEDAnimalPickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				C48B950C232770B500E31C56 /* SEEDAnimalPickerManager.h */,
+				C48B950D232770B500E31C56 /* SEEDAnimalPickerManager.m */,
+			);
+			path = SEEDAnimalPickerManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,11 +422,14 @@
 				C48B94FE23274B6400E31C56 /* SEEDPickerYYYYManager.m in Sources */,
 				C48B950423274B6400E31C56 /* SEEDPickeYMDManager.m in Sources */,
 				C48B950A23274B6400E31C56 /* SEEDPickerDefines.m in Sources */,
+				C48B950E232770B500E31C56 /* SEEDAnimalPickerManager.m in Sources */,
 				C48B94A923274B2600E31C56 /* ViewController.m in Sources */,
+				C48B95112327739C00E31C56 /* SEEDPickerAnimalConfig.m in Sources */,
 				C48B950823274B6400E31C56 /* SEEDPickerDateConfig.m in Sources */,
 				C48B94B423274B2600E31C56 /* main.m in Sources */,
 				C48B950123274B6400E31C56 /* SEEDPickeYMDHMSManager.m in Sources */,
 				C48B950023274B6400E31C56 /* SEEDPickeYMDHManager.m in Sources */,
+				C48B9518232783F600E31C56 /* SEEDPickeAnimalModel.m in Sources */,
 				C48B94FD23274B6400E31C56 /* SEEDPickerView.m in Sources */,
 				C48B94A623274B2600E31C56 /* AppDelegate.m in Sources */,
 				C48B950623274B6400E31C56 /* SEEDPickeYMDHMManager.m in Sources */,

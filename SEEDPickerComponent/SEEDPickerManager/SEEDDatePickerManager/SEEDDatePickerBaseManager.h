@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SEEDPickerDateConfig.h"
 #import "SEEDPickerBasicProtocol.h"
 @class SEEDPickerSectionItem;
 
 @interface SEEDDatePickerBaseManager : NSObject<SEEDPickerManagerBasicDelegate>
+
+//实例的类型
+@property (nonatomic, assign) EHIDateComponentType type;
 
 #pragma mark   ------   init && abstract function    ------
 /**

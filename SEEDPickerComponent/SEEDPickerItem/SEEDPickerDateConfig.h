@@ -58,7 +58,7 @@
 + (SEEDPickerDateConfig *)defaultConfig;
 
 /** 根据时间信息生成config */
-+ (SEEDPickerDateConfig *)cteateFonfigWithDate:(NSDate *)date withIszh:(BOOL)isZh;
++ (SEEDPickerDateConfig *)createConfigWithDate:(NSDate *)date withIszh:(BOOL)isZh;
 
 @end
 

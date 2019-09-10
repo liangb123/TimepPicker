@@ -7,7 +7,6 @@
 //  
 
 #import <Foundation/Foundation.h>
-#import "SEEDPickerDateConfig.h"
 #import "SEEDPickerBasicProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN

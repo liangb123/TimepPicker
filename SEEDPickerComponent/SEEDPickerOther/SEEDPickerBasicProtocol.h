@@ -63,9 +63,6 @@ typedef void(^selectBlcok)(id date);
 /** 所有PickerView对应的manager 都需要遵循这个协议 */
 @protocol SEEDPickerManagerBasicDelegate <NSObject>
 
-//实例的类型
-@property (nonatomic, assign) EHIDateComponentType type;
-
 //操作时间选择器后将结果通知到VC
 @property (nonatomic, weak  ) id<SEEDPickerViewDelegate> delegate;
 

@@ -10,7 +10,6 @@
 
 @implementation SEEDOtherPickerManager
 
-@synthesize type;
 @synthesize delegate;
 
 

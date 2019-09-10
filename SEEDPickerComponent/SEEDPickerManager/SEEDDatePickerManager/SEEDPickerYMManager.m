@@ -49,7 +49,7 @@
         data = sourceConfig.mindate;
     }
 
-    SEEDPickerDateConfig *config = [SEEDPickerDateConfig cteateFonfigWithDate:data withIszh:sourceConfig.isZh];
+    SEEDPickerDateConfig *config = [SEEDPickerDateConfig createConfigWithDate:data withIszh:sourceConfig.isZh];
     [dateSource enumerateObjectsUsingBlock:^(SEEDPickerSectionItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         SEEDPickerDateConfig *subConfig = (SEEDPickerDateConfig *)obj.config;
         switch (idx) {
@@ -135,7 +135,6 @@
     }
 }
 
-@synthesize type;
 @synthesize delegate;
 
 @end

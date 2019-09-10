@@ -17,7 +17,6 @@
 
 @implementation SEEDDatePickerBaseManager
 
-@synthesize type;
 @synthesize delegate;
 
 #pragma mark   ------   lazy    ------

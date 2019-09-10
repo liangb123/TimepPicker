@@ -43,7 +43,7 @@
         data = sourceConfig.mindate;
     }
     
-    SEEDPickerDateConfig *config = [SEEDPickerDateConfig cteateFonfigWithDate:data withIszh:sourceConfig.isZh];
+    SEEDPickerDateConfig *config = [SEEDPickerDateConfig createConfigWithDate:data withIszh:sourceConfig.isZh];
     [dateSource enumerateObjectsUsingBlock:^(SEEDPickerSectionItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         SEEDPickerDateConfig *subConfig = (SEEDPickerDateConfig *)item.config;
         NSInteger row = [obj.dataArray indexOfObject:config.year];
@@ -93,7 +93,6 @@
     }
 }
 
-@synthesize type;
 @synthesize delegate;
 
 @end

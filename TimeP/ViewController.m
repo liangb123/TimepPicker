@@ -23,6 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"area" ofType:@"xml"];
+//    NSData *data = [[NSData alloc]initWithContentsOfFile:path];
+//    
+//    
+//    NSDictionary *dic = infoArray.lastObject;
+//    NSArray *a = dic[@"Cities"];
+//    NSLog(@"%@", a.firstObject);
+    
     self.picker = [[SEEDPickerView alloc] initWithFrame:self.view.frame withSelectBlock:^(id  _Nonnull model) {
         
     }];

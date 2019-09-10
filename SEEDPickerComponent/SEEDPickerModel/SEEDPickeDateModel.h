@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 /** 选中秒 */
 @property (nonatomic, copy) NSString *second;
 
-//根据配置文件 生成对应的model
+//根据配置信息 生成对应的model
 + (SEEDPickeDateModel *)createModelWithConfig:(SEEDPickerDateConfig*)config;
 
 @end
