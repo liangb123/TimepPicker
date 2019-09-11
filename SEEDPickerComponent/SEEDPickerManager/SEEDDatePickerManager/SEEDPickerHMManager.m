@@ -12,7 +12,9 @@
 
 @implementation SEEDPickerHMManager
 
-- (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh withminuteInterval:(NSInteger)minuteInterval withMinDate:(NSDate*)mindate{
+- (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh
+                                                 withminuteInterval:(NSInteger)minuteInterval
+                                                        withMinDate:(NSDate*)mindate{
     
     NSMutableArray *dataSource = [NSMutableArray array];
     SEEDPickerDateConfig *config = [SEEDPickerDateConfig defaultConfig];
@@ -36,7 +38,9 @@
     
 }
 
-- (void)pickerView:(UIPickerView *)pickerView selectSpecifiedData:(NSDate *)data
+//跳到指定位置
+- (void)pickerView:(UIPickerView *)pickerView
+selectSpecifiedData:(NSDate *)data
     withDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dateSource{
     
     SEEDPickerSectionItem *item = [dateSource objectAtIndex:0];
@@ -72,8 +76,11 @@
     self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
 }
 
-- (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-            withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
+//选中某行后
+- (void)didSelectRow:(NSInteger)row
+         inComponent:(NSInteger)component
+            withItem:(SEEDPickerSectionItem*)item
+      withDataSource:(NSMutableArray *)dateSource{
     
     if (item) {
         SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
@@ -102,7 +109,10 @@
 }
 
 //比较两个时间 来决定是否可选
-- (void)compareMindateWithRow:(NSInteger)row inComponent:(NSInteger)component withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
+- (void)compareMindateWithRow:(NSInteger)row
+                  inComponent:(NSInteger)component
+                     withItem:(SEEDPickerSectionItem*)item
+               withDataSource:(NSMutableArray *)dateSource{
     //获取新选择的时间
     NSDate *currentSelectDate = [super loadCurrentSelectDateWithItem:item];
     SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;

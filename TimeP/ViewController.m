@@ -13,62 +13,84 @@
 #import "SEEDAnimalPickerManager.h"
 #import "SEEDPickeAnimalModel.h"
 
-@interface ViewController ()
 
-@property (nonatomic, strong) SEEDPickerView *picker;
-@property (nonatomic, strong) UITextField *nameT;
-@property (nonatomic, strong) UITextField *weightT;
+#import "DetailVC.h"
+#import "FirstViewController.h"
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
 @implementation ViewController
 
+#pragma mark ------------------------------load view  ------------------------------
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    
-    self.nameT = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, self.view.frame.size.width / 2 - 20, 50)];
-    self.nameT.placeholder = @"请输入名称";
-    self.nameT.borderStyle = UITextBorderStyleLine;
-    [self.view addSubview:self.nameT];
-    
-    self.weightT = [[UITextField alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2, 10, self.view.frame.size.width / 2 - 20, 50)];
-    self.weightT.placeholder = @"请输入体重";
-    self.weightT.borderStyle = UITextBorderStyleLine;
-    self.weightT.keyboardType = UIKeyboardTypeNumberPad;
-    [self.view addSubview:self.weightT];
-    
-    UIButton *jumpBtn = [UIButton buttonWithType:0];
-    jumpBtn.frame = CGRectMake(50, 110, self.view.frame.size.width - 100, 100);
-    jumpBtn.backgroundColor = UIColor.redColor;
-    [jumpBtn setTitle:@"跳转到指定位置" forState:0];
-    [jumpBtn addTarget:self action:@selector(jumpAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:jumpBtn];
-    
-    
-    self.picker = [[SEEDPickerView alloc] initWithFrame:CGRectMake(0, 220, self.view.frame.size.width, 500) withSelectBlock:^(id  _Nonnull model) {
-        NSLog(@"%@",model);
-    }];
-    
-    [self.view addSubview:self.picker];
-    self.picker.dataSource = [[SEEDAnimalPickerManager alloc] creatAnimalDataArray];
-    
+    [self.view addSubview:self.tableView];
 }
 
-- (void)jumpAction:(id)sender{
-    
-    SEEDPickeAnimalModel *model = [SEEDPickeAnimalModel new];
-    model.name = self.nameT.text;
-    model.weight = [NSString stringWithFormat:@"%@ Kg",self.weightT.text];
-    [self.picker jumptoSpecifiedData:model];
-    
+#pragma mark ------------------------------ tableDele dataSource  ------------------------------
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataSource.count;
 }
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    CGPoint point = [[touches anyObject] locationInView:self.view];
-    if (!CGRectContainsPoint(_nameT.frame, point) || !CGRectContainsPoint(_weightT.frame, point)){
-        [self.view endEditing:YES];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:0 reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [self.dataSource objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    if (indexPath.row == 8) {
+        [self.navigationController pushViewController:[DetailVC new] animated:YES];
+    }else{
+        [self.navigationController pushViewController:[[FirstViewController alloc] initWithType:indexPath.row] animated:YES];
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPathP{
+    return 60;
+}
+
+#pragma mark ------------------------------ lazy ------------------------------
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [UIView new];
+        _tableView.showsVerticalScrollIndicator = NO;
+        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    }
+    return _tableView;
+}
+
+- (NSMutableArray *)dataSource{
+    if (!_dataSource) {
+        _dataSource = [NSMutableArray arrayWithObjects:@"yyyy-MM-dd HH:mm:ss",@"yyyy-MM-dd HH:mm",@"yyyy-MM-dd HH",@"yyyy-MM-dd",@"MM-dd HH:mm",@"HH:mm",@"yyyy-MM",@"yyyy",@"举例  animal", nil];
+    }
+    return _dataSource;
+}
+
+
+
+#pragma mark ------------------------------ MemoryWarning ------------------------------
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
 @end

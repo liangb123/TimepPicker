@@ -40,7 +40,10 @@
 
 }
 
-- (void)pickerView:(UIPickerView *)pickerView selectSpecifiedData:(NSDate *)data withDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dateSource{
+//跳到指定位置
+- (void)pickerView:(UIPickerView *)pickerView
+selectSpecifiedData:(NSDate *)data
+    withDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dateSource{
 
     SEEDPickerSectionItem *item = [dateSource objectAtIndex:0];
     SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
@@ -76,7 +79,9 @@
     self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
 }
 
-- (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+//选中某行后
+- (void)didSelectRow:(NSInteger)row
+         inComponent:(NSInteger)component
             withItem:(SEEDPickerSectionItem*)item
       withDataSource:(NSMutableArray *)dateSource{
 

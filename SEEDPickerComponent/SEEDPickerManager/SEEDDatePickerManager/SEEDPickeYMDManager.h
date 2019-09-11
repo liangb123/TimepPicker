@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 /** yyyy-m-d  */
 @interface SEEDPickeYMDManager : SEEDDatePickerBaseManager<SEEDPickerManagerBasicDelegate>
 
+/** 便利构造器*/
+- (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh
+                                                 withminuteInterval:(NSInteger)minuteInterval
+                                                        withMinDate:(NSDate*)mindate;
+
 @end
 
 NS_ASSUME_NONNULL_END

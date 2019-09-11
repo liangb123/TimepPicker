@@ -7,7 +7,6 @@
 //
 
 #import "SEEDPickerView.h"
-#import "SEEDDatePickerBaseManager.h"
 #import "SEEDPickerSectionItem.h"
 #import "SEEDPickerBasicProtocol.h"
 
@@ -62,7 +61,7 @@
     self.redirectTargetData = redirectTargetData;
     if (self.dataSource && self.dataSource.count > 0) {
         SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:0];
-        SEEDPickerDateConfig *itemConfig = (SEEDPickerDateConfig *)item.config;
+        id <SEEDPickerItemDelegate>itemConfig = item.config;
         id<SEEDPickerManagerBasicDelegate> manager = [[NSClassFromString([itemConfig loadManagerClassName]) alloc] init];
         if (manager.delegate != self) {
             manager.delegate = self;
@@ -71,13 +70,13 @@
     }
 }
 
-- (void)setDataSource:(NSMutableArray *)dataSource{
+- (void)setDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dataSource{
     _dataSource = dataSource;
     
     if (dataSource && dataSource.count > 0) {
+        SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:0];
+        id <SEEDPickerItemDelegate>itemConfig = item.config;
         if (self.redirectTargetData) {
-            SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:0];
-            SEEDPickerDateConfig *itemConfig = (SEEDPickerDateConfig *)item.config;
             id<SEEDPickerManagerBasicDelegate> manager = [[NSClassFromString([itemConfig loadManagerClassName]) alloc] init];
             if (manager.delegate != self) {
                 manager.delegate = self;
@@ -135,7 +134,7 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
         
     SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:component];
-    SEEDPickerDateConfig *itemConfig = (SEEDPickerDateConfig *)item.config;
+    id <SEEDPickerItemDelegate>itemConfig = item.config;
     if (component != self.dataSource.count) {
         id<SEEDPickerManagerBasicDelegate> manager = [[NSClassFromString([itemConfig loadManagerClassName]) alloc] init];
         if (manager.delegate != self) {

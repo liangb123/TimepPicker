@@ -26,13 +26,14 @@
 		C48B950423274B6400E31C56 /* SEEDPickeYMDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94EB23274B6400E31C56 /* SEEDPickeYMDManager.m */; };
 		C48B950523274B6400E31C56 /* SEEDDatePickerBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94ED23274B6400E31C56 /* SEEDDatePickerBaseManager.m */; };
 		C48B950623274B6400E31C56 /* SEEDPickeYMDHMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94EE23274B6400E31C56 /* SEEDPickeYMDHMManager.m */; };
-		C48B950723274B6400E31C56 /* SEEDOtherPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94F223274B6400E31C56 /* SEEDOtherPickerManager.m */; };
 		C48B950823274B6400E31C56 /* SEEDPickerDateConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94F423274B6400E31C56 /* SEEDPickerDateConfig.m */; };
 		C48B950923274B6400E31C56 /* SEEDPickerSectionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94F723274B6400E31C56 /* SEEDPickerSectionItem.m */; };
 		C48B950A23274B6400E31C56 /* SEEDPickerDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B94FB23274B6400E31C56 /* SEEDPickerDefines.m */; };
 		C48B950E232770B500E31C56 /* SEEDAnimalPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B950D232770B500E31C56 /* SEEDAnimalPickerManager.m */; };
 		C48B95112327739C00E31C56 /* SEEDPickerAnimalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B95102327739C00E31C56 /* SEEDPickerAnimalConfig.m */; };
 		C48B9518232783F600E31C56 /* SEEDPickeAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B9517232783F600E31C56 /* SEEDPickeAnimalModel.m */; };
+		C48B951B2328854400E31C56 /* DetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B951A2328854400E31C56 /* DetailVC.m */; };
+		C48B951E2328870400E31C56 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C48B951D2328870400E31C56 /* FirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,8 +92,6 @@
 		C48B94ED23274B6400E31C56 /* SEEDDatePickerBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDDatePickerBaseManager.m; sourceTree = "<group>"; };
 		C48B94EE23274B6400E31C56 /* SEEDPickeYMDHMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDPickeYMDHMManager.m; sourceTree = "<group>"; };
 		C48B94EF23274B6400E31C56 /* SEEDPickeYMDHMSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPickeYMDHMSManager.h; sourceTree = "<group>"; };
-		C48B94F123274B6400E31C56 /* SEEDOtherPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDOtherPickerManager.h; sourceTree = "<group>"; };
-		C48B94F223274B6400E31C56 /* SEEDOtherPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDOtherPickerManager.m; sourceTree = "<group>"; };
 		C48B94F423274B6400E31C56 /* SEEDPickerDateConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEEDPickerDateConfig.m; sourceTree = "<group>"; };
 		C48B94F523274B6400E31C56 /* SEEDPickerSectionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPickerSectionItem.h; sourceTree = "<group>"; };
 		C48B94F623274B6400E31C56 /* SEEDPickerDateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEEDPickerDateConfig.h; sourceTree = "<group>"; };
@@ -106,6 +105,10 @@
 		C48B95102327739C00E31C56 /* SEEDPickerAnimalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDPickerAnimalConfig.m; sourceTree = "<group>"; };
 		C48B9516232783F600E31C56 /* SEEDPickeAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDPickeAnimalModel.h; sourceTree = "<group>"; };
 		C48B9517232783F600E31C56 /* SEEDPickeAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SEEDPickeAnimalModel.m; sourceTree = "<group>"; };
+		C48B95192328854400E31C56 /* DetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailVC.h; sourceTree = "<group>"; };
+		C48B951A2328854400E31C56 /* DetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailVC.m; sourceTree = "<group>"; };
+		C48B951C2328870400E31C56 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		C48B951D2328870400E31C56 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +164,10 @@
 				C48B94A523274B2600E31C56 /* AppDelegate.m */,
 				C48B94A723274B2600E31C56 /* ViewController.h */,
 				C48B94A823274B2600E31C56 /* ViewController.m */,
+				C48B951C2328870400E31C56 /* FirstViewController.h */,
+				C48B951D2328870400E31C56 /* FirstViewController.m */,
+				C48B95192328854400E31C56 /* DetailVC.h */,
+				C48B951A2328854400E31C56 /* DetailVC.m */,
 				C48B94AA23274B2600E31C56 /* Main.storyboard */,
 				C48B94AD23274B2600E31C56 /* Assets.xcassets */,
 				C48B94AF23274B2600E31C56 /* LaunchScreen.storyboard */,
@@ -217,7 +224,6 @@
 			children = (
 				C48B950B2327708D00E31C56 /* SEEDAnimalPickerManager */,
 				C48B94DD23274B6400E31C56 /* SEEDDatePickerManager */,
-				C48B94F023274B6400E31C56 /* SEEDOtherPickerManager */,
 			);
 			path = SEEDPickerManager;
 			sourceTree = "<group>";
@@ -245,15 +251,6 @@
 				C48B94EB23274B6400E31C56 /* SEEDPickeYMDManager.m */,
 			);
 			path = SEEDDatePickerManager;
-			sourceTree = "<group>";
-		};
-		C48B94F023274B6400E31C56 /* SEEDOtherPickerManager */ = {
-			isa = PBXGroup;
-			children = (
-				C48B94F123274B6400E31C56 /* SEEDOtherPickerManager.h */,
-				C48B94F223274B6400E31C56 /* SEEDOtherPickerManager.m */,
-			);
-			path = SEEDOtherPickerManager;
 			sourceTree = "<group>";
 		};
 		C48B94F323274B6400E31C56 /* SEEDPickerItem */ = {
@@ -429,13 +426,14 @@
 				C48B94B423274B2600E31C56 /* main.m in Sources */,
 				C48B950123274B6400E31C56 /* SEEDPickeYMDHMSManager.m in Sources */,
 				C48B950023274B6400E31C56 /* SEEDPickeYMDHManager.m in Sources */,
+				C48B951B2328854400E31C56 /* DetailVC.m in Sources */,
 				C48B9518232783F600E31C56 /* SEEDPickeAnimalModel.m in Sources */,
 				C48B94FD23274B6400E31C56 /* SEEDPickerView.m in Sources */,
 				C48B94A623274B2600E31C56 /* AppDelegate.m in Sources */,
 				C48B950623274B6400E31C56 /* SEEDPickeYMDHMManager.m in Sources */,
 				C48B950923274B6400E31C56 /* SEEDPickerSectionItem.m in Sources */,
-				C48B950723274B6400E31C56 /* SEEDOtherPickerManager.m in Sources */,
 				C48B950223274B6400E31C56 /* SEEDPickeMDHMManager.m in Sources */,
+				C48B951E2328870400E31C56 /* FirstViewController.m in Sources */,
 				C48B94FF23274B6400E31C56 /* SEEDPickerHMManager.m in Sources */,
 				C48B950523274B6400E31C56 /* SEEDDatePickerBaseManager.m in Sources */,
 				C48B94FC23274B6400E31C56 /* SEEDPickeDateModel.m in Sources */,

@@ -13,12 +13,15 @@
 /** yyyy-m-d hh:mm*/
 @implementation SEEDPickeYMDHMManager
 
-- (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh withminuteInterval:(NSInteger)minuteInterval withMinDate:(NSDate*)mindate{
+- (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh
+                                                 withminuteInterval:(NSInteger)minuteInterval
+                                                        withMinDate:(NSDate*)mindate{
     
     NSMutableArray *dataSource = [NSMutableArray array];
     SEEDPickerDateConfig *config = [SEEDPickerDateConfig defaultConfig];
     config.isZh = isZh;
     config.type = self.type;
+    config.mindate = mindate;
     config.minuteInterval = minuteInterval;
     
     SEEDPickerSectionItem *yearItem = [SEEDPickerSectionItem new];
@@ -51,7 +54,10 @@
     
 }
 
-- (void)pickerView:(UIPickerView *)pickerView selectSpecifiedData:(NSDate *)data withDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dateSource{
+//跳到指定位置
+- (void)pickerView:(UIPickerView *)pickerView
+selectSpecifiedData:(NSDate *)data
+    withDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dateSource{
     
     SEEDPickerSectionItem *item = [dateSource objectAtIndex:0];
     SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
@@ -110,7 +116,10 @@
     self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
 }
 
-- (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
+//选中某行后
+- (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+            withItem:(SEEDPickerSectionItem*)item
+      withDataSource:(NSMutableArray *)dateSource{
     
     if (item) {
         SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
@@ -157,7 +166,10 @@
 }
 
 //比较两个时间 来决定是否可选
-- (void)compareMindateWithRow:(NSInteger)row inComponent:(NSInteger)component withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
+- (void)compareMindateWithRow:(NSInteger)row
+                  inComponent:(NSInteger)component
+                     withItem:(SEEDPickerSectionItem*)item
+               withDataSource:(NSMutableArray *)dateSource{
     
     SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
     //获取新选择的时间
@@ -197,7 +209,8 @@
 }
 
 //同时包含月-天   切换月份需要刷新天数
-- (void)refreshDayWithItem:(SEEDPickerSectionItem*)item withTargetItem:(SEEDPickerSectionItem *)targetItem{
+- (void)refreshDayWithItem:(SEEDPickerSectionItem*)item
+            withTargetItem:(SEEDPickerSectionItem *)targetItem{
     
     SEEDPickerDateConfig *sourceConfig = (SEEDPickerDateConfig *)item.config;
     NSMutableArray *arr = [NSMutableArray array];
