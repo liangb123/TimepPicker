@@ -21,5 +21,4 @@ typedef NS_ENUM(NSInteger, EHIDateComponentType) {
     EHIDateComponentTypeY , //  yyyy
 };
 
-
 NS_ASSUME_NONNULL_END

@@ -22,7 +22,6 @@ typedef void(^selectBlcok)(id date);
 
 @property (nonatomic, copy) selectBlcok didSelectBlock;
 
-
 /**
  同时含有月-天时， 改变月份后，刷新对应的天数
 
@@ -45,6 +44,8 @@ typedef void(^selectBlcok)(id date);
 
 
 
+
+
 #pragma mark   ------   SEEDPickerItemDelegate    ------
 /** 所有PickerView对应的item 都需要遵循这个协议 */
 @protocol SEEDPickerItemDelegate <NSObject>
@@ -53,6 +54,8 @@ typedef void(^selectBlcok)(id date);
 - (NSString *)loadManagerClassName;
 
 @end
+
+
 
 
 
@@ -93,7 +96,6 @@ typedef void(^selectBlcok)(id date);
 
 
 @optional
-
 
 /**
  同时包含月-天   切换月份需要刷新天数

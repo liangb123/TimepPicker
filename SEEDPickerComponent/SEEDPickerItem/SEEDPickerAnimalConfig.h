@@ -10,8 +10,6 @@
 #import "SEEDPickerBasicProtocol.h"
 @class SEEDPickeAnimalModel;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface SEEDPickerAnimalConfig : NSObject<NSCopying, NSMutableCopying,SEEDPickerItemDelegate>
 
 /** 名字组 */
@@ -29,4 +27,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-NS_ASSUME_NONNULL_END

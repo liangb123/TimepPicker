@@ -9,9 +9,6 @@
 #import "FirstViewController.h"
 #import "SEEDPickerView.h"
 #import "SEEDDatePickerBaseManager.h"
-#import "SEEDPickeMDHMManager.h"
-#import "SEEDAnimalPickerManager.h"
-#import "SEEDPickeAnimalModel.h"
 
 
 @interface FirstViewController ()
@@ -40,8 +37,10 @@
     [self.view addSubview:self.picker];
     
     
-//    self.picker.dataSource = [SEEDDatePickerBaseManager initNormalDatePickerWithType:self.type];
+//  便利写法
+//  self.picker.dataSource = [SEEDDatePickerBaseManager initNormalDatePickerWithType:self.type];
     
+    //自定义写法
     self.picker.dataSource = [[SEEDDatePickerBaseManager initWithType:self.type] creatDateArrayWithIszh:NO withminuteInterval:1 withMinDate:[NSDate date]];
     [self.picker jumptoSpecifiedData:[NSDate date]];
     

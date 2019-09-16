@@ -6,16 +6,12 @@
 //  Copyright © 2019 liangbing. All rights reserved.
 //
 
+#import "DetailVC.h"
 #import "ViewController.h"
 #import "SEEDPickerView.h"
-#import "SEEDDatePickerBaseManager.h"
-#import "SEEDPickeMDHMManager.h"
-#import "SEEDAnimalPickerManager.h"
-#import "SEEDPickeAnimalModel.h"
-
-
-#import "DetailVC.h"
 #import "FirstViewController.h"
+#import "SEEDDatePickerBaseManager.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
@@ -85,8 +81,6 @@
     }
     return _dataSource;
 }
-
-
 
 #pragma mark ------------------------------ MemoryWarning ------------------------------
 - (void)didReceiveMemoryWarning {

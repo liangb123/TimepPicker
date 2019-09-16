@@ -8,10 +8,8 @@
 
 #import "DetailVC.h"
 #import "SEEDPickerView.h"
-#import "SEEDDatePickerBaseManager.h"
-#import "SEEDPickeMDHMManager.h"
-#import "SEEDAnimalPickerManager.h"
 #import "SEEDPickeAnimalModel.h"
+#import "SEEDAnimalPickerManager.h"
 
 @interface DetailVC ()
 @property (nonatomic, strong) SEEDPickerView *picker;
