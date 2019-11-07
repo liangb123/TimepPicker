@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/12.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDPickerView.h"
@@ -72,20 +72,23 @@
 
 - (void)setDataSource:(NSMutableArray<SEEDPickerSectionItem *> *)dataSource{
     _dataSource = dataSource;
+    [self.pickview reloadAllComponents];
     
     if (dataSource && dataSource.count > 0) {
         SEEDPickerSectionItem *item = [self.dataSource objectAtIndex:0];
         id <SEEDPickerItemDelegate>itemConfig = item.config;
-        if (self.redirectTargetData) {
-            id<SEEDPickerManagerBasicDelegate> manager = [[NSClassFromString([itemConfig loadManagerClassName]) alloc] init];
-            if (manager.delegate != self) {
-                manager.delegate = self;
-            }
-            [manager pickerView:self.pickview selectSpecifiedData:self.redirectTargetData withDataSource:dataSource];
-            return;
+        id<SEEDPickerManagerBasicDelegate> manager = [[NSClassFromString([itemConfig loadManagerClassName]) alloc] init];
+        if (manager.delegate != self) {
+            manager.delegate = self;
         }
+        if (self.redirectTargetData) {
+            [manager pickerView:self.pickview selectSpecifiedData:self.redirectTargetData withDataSource:dataSource];
+        }else{
+            //每次初始化 选中一个默认值。
+            [manager selectFirstLineValueWith:dataSource];
+        }
+        
     }
-    [self.pickview reloadAllComponents];
 }
 
 - (void)setSelectBlock:(void (^)(id _Nonnull))selectBlock{

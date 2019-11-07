@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/13.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDDatePickerBaseManager.h"

@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/13.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDPickerYMManager.h"
@@ -110,6 +110,24 @@ selectSpecifiedData:(NSDate *)data
         self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
     }
 }
+
+//在不指定具体SpecifiedData时，默认选中第一行数据
+- (void)selectFirstLineValueWith:(NSMutableArray *)dateSource {
+    
+    SEEDPickerDateConfig *sourceConfig = [SEEDPickerDateConfig defaultConfig];
+    SEEDPickerSectionItem *itemYear = [dateSource objectAtIndex:0];
+    NSString *year = [itemYear.dataArray objectAtIndex:0];
+    sourceConfig.year = year;
+    
+    SEEDPickerSectionItem *itemMonth = [dateSource objectAtIndex:1];
+    NSString *month = [itemMonth.dataArray objectAtIndex:0];
+    sourceConfig.month = month;
+    
+    SEEDPickeDateModel *model = [SEEDPickeDateModel createModelWithConfig:sourceConfig];
+    self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
+    
+}
+
 
 //比较两个时间 来决定是否可选
 - (void)compareMindateWithRow:(NSInteger)row inComponent:(NSInteger)component

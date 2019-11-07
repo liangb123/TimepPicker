@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/13.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDDatePickerBaseManager.h"
@@ -17,7 +17,7 @@
 
 @implementation SEEDDatePickerBaseManager
 
-@synthesize delegate;
+//@synthesize delegate;
 
 #pragma mark   ------   lazy    ------
 - (NSDateFormatter *)dateFormatter{
@@ -82,18 +82,6 @@
                                              withminuteInterval:(NSInteger)minuteInterval withMinDate:(NSDate*)mindate{
     NSLog(@"This is a abstract method, subclass must override.");
     return nil;
-}
-
-//选中具体的时间
-- (void)didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-            withItem:(SEEDPickerSectionItem*)item withDataSource:(NSMutableArray *)dateSource{
-    NSLog(@"This is a abstract method, subclass must override.");
-}
-
-//跳转到指定数据
-- (void)pickerView:(UIPickerView*)pickerView selectSpecifiedData:(id)date
-    withDataSource:(NSMutableArray<SEEDPickerSectionItem*> *)dateSource{
-    NSLog(@"This is a abstract method, subclass must override.");
 }
 
 #pragma mark   ------   tool function    ------

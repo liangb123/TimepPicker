@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/7/29.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDPickeMDHMManager.h"
@@ -203,6 +203,33 @@ selectSpecifiedData:(NSDate *)data
     //刷新
     [super afterSeletedRefreshDataWithItem:item targetItem:targetItem];
 }
+
+//在不指定具体SpecifiedData时，默认选中第一行数据
+- (void)selectFirstLineValueWith:(NSMutableArray *)dateSource {
+    
+    SEEDPickerDateConfig *sourceConfig = [SEEDPickerDateConfig defaultConfig];
+    SEEDPickerSectionItem *itemMonth = [dateSource objectAtIndex:0];
+    NSString *month = [itemMonth.dataArray objectAtIndex:0];
+    sourceConfig.month = month;
+    
+    SEEDPickerSectionItem *itemDay = [dateSource objectAtIndex:1];
+    NSString *day = [itemDay.dataArray objectAtIndex:0];
+    sourceConfig.day = day;
+    
+    
+    SEEDPickerSectionItem *itemHour = [dateSource objectAtIndex:2];
+    NSString *hour = [itemHour.dataArray objectAtIndex:0];
+    sourceConfig.hour = hour;
+    
+    SEEDPickerSectionItem *itemMinute = [dateSource objectAtIndex:3];
+    NSString *minute = [itemMinute.dataArray objectAtIndex:0];
+    sourceConfig.minute = minute;
+     
+    SEEDPickeDateModel *model = [SEEDPickeDateModel createModelWithConfig:sourceConfig];
+    self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
+    
+}
+
 
 @synthesize delegate;
 @end

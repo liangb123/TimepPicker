@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/13.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@
 #import "SEEDPickerBasicProtocol.h"
 @class SEEDPickerSectionItem;
 
-@interface SEEDDatePickerBaseManager : NSObject<SEEDPickerManagerBasicDelegate>
+@interface SEEDDatePickerBaseManager : NSObject
 
 //实例的类型
 @property (nonatomic, assign) EHIDateComponentType type;
@@ -42,7 +42,7 @@
  @param minuteInterval   分钟的间隔
  @param mindate          可滑动的最小时间(格式遵循 @"yyyy-MM-dd HH:mm:ss") (不需要则传 nil)
 
- @return     时间数据源 
+ @return     时间数据源
  */
 - (NSMutableArray <SEEDPickerSectionItem *>*)creatDateArrayWithIszh:(BOOL)isZh
                                              withminuteInterval:(NSInteger)minuteInterval

@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/6/13.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -94,6 +94,14 @@ typedef void(^selectBlcok)(id date);
             withItem:(SEEDPickerSectionItem*)item
       withDataSource:(NSMutableArray *)dateSource;
 
+
+
+/**
+ 在不指定具体SpecifiedData时，默认选中第一行数据
+ 
+@param dateSource 整体的数据源
+*/
+- (void)selectFirstLineValueWith:(NSMutableArray *)dateSource;
 
 @optional
 

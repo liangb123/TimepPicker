@@ -3,7 +3,7 @@
 //  driver
 //
 //  Created by liangbing on 2019/7/29.
-//  Copyright © 2019 1hai. All rights reserved.
+//  Copyright © 2019 LB. All rights reserved.
 //
 
 #import "SEEDPickerHMManager.h"
@@ -107,6 +107,24 @@ selectSpecifiedData:(NSDate *)data
         self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
     }
 }
+
+//在不指定具体SpecifiedData时，默认选中第一行数据
+- (void)selectFirstLineValueWith:(NSMutableArray *)dateSource {
+    
+    SEEDPickerDateConfig *sourceConfig = [SEEDPickerDateConfig defaultConfig];
+    SEEDPickerSectionItem *itemHour = [dateSource objectAtIndex:0];
+    NSString *hour = [itemHour.dataArray objectAtIndex:0];
+    sourceConfig.hour = hour;
+    
+    SEEDPickerSectionItem *itemMinute = [dateSource objectAtIndex:1];
+    NSString *minute = [itemMinute.dataArray objectAtIndex:0];
+    sourceConfig.minute = minute;
+     
+    SEEDPickeDateModel *model = [SEEDPickeDateModel createModelWithConfig:sourceConfig];
+    self.delegate.didSelectBlock?self.delegate.didSelectBlock(model):nil;
+    
+}
+
 
 //比较两个时间 来决定是否可选
 - (void)compareMindateWithRow:(NSInteger)row
