@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C45754902421B6F60072DA9B /* SEEDPickerViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SEEDPickerViewHeader.h; sourceTree = "<group>"; };
 		C48B94A123274B2600E31C56 /* TimeP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C48B94A423274B2600E31C56 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C48B94A523274B2600E31C56 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 				C48B94FA23274B6400E31C56 /* SEEDPickerBasicProtocol.h */,
 				C48B94F923274B6400E31C56 /* SEEDPickerDefines.h */,
 				C48B94FB23274B6400E31C56 /* SEEDPickerDefines.m */,
+				C45754902421B6F60072DA9B /* SEEDPickerViewHeader.h */,
 			);
 			path = SEEDPickerOther;
 			sourceTree = "<group>";
